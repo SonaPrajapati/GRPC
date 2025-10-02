@@ -1,3 +1,5 @@
+// protoc --go-grpc_out=. --go_out=. *.proto
+
 syntax = "proto3";
 
 option go_package = "./";
@@ -11,5 +13,5 @@ message HelloResponse{
 }
 
 service Example{
-	rpc ServerReply (HelloRequest) returns (HelloResponse);
+	rpc ServerReply (stream HelloRequest) returns (HelloResponse);
 }
